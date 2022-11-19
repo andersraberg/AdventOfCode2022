@@ -6,8 +6,6 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
-import se.anders_raberg.adventofcode2022.DaysMain;
-
 class TestRun {
 	DaysMain testee = new DaysMain();
 

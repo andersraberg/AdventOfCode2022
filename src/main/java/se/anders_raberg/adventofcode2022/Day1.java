@@ -17,7 +17,7 @@ public class Day1 {
         List<String> data = Files.readAllLines(Paths.get("inputs/input1.txt")).stream() //
                 .toList();
 
-        LOGGER.info(data.toString());
+        LOGGER.info("Part 1 : " + data.toString());
     }
 
 }
