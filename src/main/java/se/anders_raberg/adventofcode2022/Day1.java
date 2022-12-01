@@ -17,11 +17,11 @@ public class Day1 {
     public static void run() throws IOException {
         String[] data = new String(Files.readAllBytes(Paths.get("inputs/input1.txt"))).split("\n\n");
 
-        List<Integer> apa = Arrays.stream(data).map(x -> Arrays.stream(x.split("\n")).mapToInt(Integer::parseInt).sum())
+        List<Integer> elves = Arrays.stream(data).map(x -> Arrays.stream(x.split("\n")).mapToInt(Integer::parseInt).sum())
                 .sorted(Collections.reverseOrder()).toList();
 
-        LOGGER.info(() -> "Part 1: " + apa.get(0));
-        LOGGER.info(() -> "Part 2: " + (apa.get(0) + apa.get(1) + apa.get(2)));
+        LOGGER.info(() -> "Part 1: " + elves.get(0));
+        LOGGER.info(() -> "Part 2: " + (elves.get(0) + elves.get(1) + elves.get(2)));
     }
 
 }
