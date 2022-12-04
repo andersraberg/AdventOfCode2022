@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import com.google.common.collect.Range;
 
@@ -22,7 +21,7 @@ public class Day4 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input4.txt")).stream().collect(Collectors.toList());
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input4.txt")).stream().toList();
         LOGGER.info(() -> "Part 1: " + lines.stream().map(Day4::parse).filter(Day4::encloses).count());
         LOGGER.info(() -> "Part 2: " + lines.stream().map(Day4::parse).map(Day4::overlap).filter(Optional::isPresent)
                 .map(Optional::get).count());
@@ -31,7 +30,7 @@ public class Day4 {
     private static Pair<Range<Integer>, Range<Integer>> parse(String line) {
         Matcher m = PATTERN.matcher(line);
         if (m.matches()) {
-            return new Pair<Range<Integer>, Range<Integer>>(
+            return new Pair<>(
                     Range.closed(Integer.parseInt(m.group(1)), Integer.parseInt(m.group(2))),
                     Range.closed(Integer.parseInt(m.group(3)), Integer.parseInt(m.group(4))));
         }

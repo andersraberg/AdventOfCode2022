@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 public class Day2 {
     private static final Logger LOGGER = Logger.getLogger(Day2.class.getName());
@@ -14,10 +13,10 @@ public class Day2 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input2.txt")).stream().collect(Collectors.toList());
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input2.txt")).stream().toList();
 
-        LOGGER.info(() -> "Part 1: " + lines.stream().mapToInt(x -> calcRoundPart1(x)).sum());
-        LOGGER.info(() -> "Part 2: " + lines.stream().mapToInt(x -> calcRoundPart2(x)).sum());
+        LOGGER.info(() -> "Part 1: " + lines.stream().mapToInt(Day2::calcRoundPart1).sum());
+        LOGGER.info(() -> "Part 2: " + lines.stream().mapToInt(Day2::calcRoundPart2).sum());
     }
 
     private static int calcRoundPart1(String str) {

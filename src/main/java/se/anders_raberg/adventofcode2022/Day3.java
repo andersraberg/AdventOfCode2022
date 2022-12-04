@@ -21,7 +21,7 @@ public class Day3 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input3.txt")).stream().collect(Collectors.toList());
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input3.txt")).stream().toList();
         LOGGER.info(() -> "Part 1: " + lines.stream().map(Day3::splitHalves).map(Day3::multiStringIntersection)
                 .mapToInt(Day3::calcPrio).sum());
 
@@ -53,7 +53,7 @@ public class Day3 {
 
     private static int calcPrio(String priority) {
         char charAt = priority.charAt(0);
-        return Character.isLowerCase(charAt) ? (int) charAt - LOWER_CASE_OFFSET : (int) charAt - UPPER_CASE_OFFSET;
+        return Character.isLowerCase(charAt) ? charAt - LOWER_CASE_OFFSET : charAt - UPPER_CASE_OFFSET;
     }
 
 }
