@@ -28,7 +28,7 @@ public class Day7 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = new ArrayList<>(Files.readAllLines(Paths.get("inputs/input7.txt")).stream().toList());
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input7.txt"));
         Directory directory = new Directory(null, new HashMap<>(), new HashMap<>());
         Directory top = directory;
 

@@ -24,7 +24,7 @@ public class Day5 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = new ArrayList<>(Files.readAllLines(Paths.get("inputs/input5.txt")).stream().toList());
+        List<String> lines = new ArrayList<>(Files.readAllLines(Paths.get("inputs/input5.txt")));
         List<Triple<Integer, Integer, Integer>> moves = parseMoves(lines);
 
         // Part 1

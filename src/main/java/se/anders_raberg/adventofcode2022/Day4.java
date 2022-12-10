@@ -21,7 +21,7 @@ public class Day4 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input4.txt")).stream().toList();
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input4.txt"));
         LOGGER.info(() -> "Part 1: " + lines.stream().map(Day4::parse).filter(Day4::encloses).count());
         LOGGER.info(() -> "Part 2: " + lines.stream().map(Day4::parse).map(Day4::overlap).filter(Optional::isPresent)
                 .map(Optional::get).count());

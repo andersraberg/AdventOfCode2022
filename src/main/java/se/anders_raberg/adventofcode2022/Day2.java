@@ -13,7 +13,7 @@ public class Day2 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input2.txt")).stream().toList();
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input2.txt"));
 
         LOGGER.info(() -> "Part 1: " + lines.stream().mapToInt(Day2::calcRoundPart1).sum());
         LOGGER.info(() -> "Part 2: " + lines.stream().mapToInt(Day2::calcRoundPart2).sum());

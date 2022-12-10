@@ -21,7 +21,7 @@ public class Day3 {
     }
 
     public static void run() throws IOException {
-        List<String> lines = Files.readAllLines(Paths.get("inputs/input3.txt")).stream().toList();
+        List<String> lines = Files.readAllLines(Paths.get("inputs/input3.txt"));
         LOGGER.info(() -> "Part 1: " + lines.stream().map(Day3::splitHalves).map(Day3::multiStringIntersection)
                 .mapToInt(Day3::calcPrio).sum());
 
