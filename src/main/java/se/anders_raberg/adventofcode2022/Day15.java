@@ -10,8 +10,8 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Day15part1 {
-    private static final Logger LOGGER = Logger.getLogger(Day15part1.class.getName());
+public class Day15 {
+    private static final Logger LOGGER = Logger.getLogger(Day15.class.getName());
     private static final Pattern PATTERN = Pattern
             .compile("Sensor at x=(-?\\d+), y=(-?\\d+): closest beacon is at x=(-?\\d+), y=(-?\\d+)");
 
@@ -48,12 +48,12 @@ public class Day15part1 {
 
     }
 
-    private Day15part1() {
+    private Day15() {
     }
 
     public static void run() throws IOException {
         List<SensorBeaconPair> sensors = Files.readAllLines(Paths.get("inputs/input15.txt")).stream() //
-                .map(Day15part1::parseLine) //
+                .map(Day15::parseLine) //
                 .toList();
 
         Set<Pos> positions = new HashSet<>();
