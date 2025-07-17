@@ -16,6 +16,15 @@ jacoco {
     applyTo run
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = false
+        csv.required = false
+    }
+
+}
+
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     implementation 'org.jgrapht:jgrapht-core:1.5.1'
